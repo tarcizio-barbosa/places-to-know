@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  api:
+    image: node
+    command: yarn dev
+    depends_on:
+      - postgres
+    ports:
+      - 3333:3333
+    restart: "on-failure"
+    volumes:
+      - ./:/app
+    working_dir: /app
+    networks:
+      - places_to_know
+  
+  postgres:
+    image: postgres
+    ports:
+      - 5432:5432
+    networks:
+      - places_to_know
+    environment:
+      - POSTEGRES_USER=docker
+      - POSTGRES_PASSWORD=docker
+      - POSTEGRES_DB=ptk
+
+networks:
+  places_to_know:
