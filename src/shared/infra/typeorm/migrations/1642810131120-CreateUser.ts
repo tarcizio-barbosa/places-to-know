@@ -7,26 +7,26 @@ export class CreateUser1642810131120 implements MigrationInterface {
         name: "users",
         columns: [
           {
-            name: "id",
+            name: "userId",
             type: "uuid",
             isPrimary: true,
           },
           {
-            name: "user_email",
+            name: "userEmail",
             type: "varchar",
             isUnique: true,
           },
           {
-            name: "user_password",
+            name: "userPassword",
             type: "varchar",
           },
           {
-            name: "created_at",
+            name: "createdAt",
             type: "timestamp",
             default: "now()",
           },
           {
-            name: "updated_at",
+            name: "updatedAt",
             type: "timestamp",
             default: "now()",
           },

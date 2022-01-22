@@ -9,19 +9,19 @@ import { v4 as uuid } from "uuid";
 
 @Entity("users")
 export class User {
-  @PrimaryColumn({ name: "id" })
-  userId: string;
+  @PrimaryColumn()
+  userId?: string;
 
-  @Column({ name: "user_email" })
+  @Column()
   userEmail: string;
 
-  @Column({ name: "user_password" })
+  @Column()
   userPassword: string;
 
-  @CreateDateColumn({ name: "created_at" })
+  @CreateDateColumn()
   createdAt: Date;
 
-  @UpdateDateColumn({ name: "updated_at" })
+  @UpdateDateColumn()
   updatedAt: Date;
 
   constructor() {
