@@ -23,10 +23,10 @@ export class UsersRepository implements IUsersRepository {
   }
 
   async findUserByEmail(userEmail: string): Promise<User | undefined> {
-    return this.repository.findOne(userEmail);
+    return this.repository.findOne({ userEmail });
   }
 
   async findById(userId: string): Promise<User> {
-    return this.repository.findOne(userId);
+    return this.repository.findOne({ id: userId });
   }
 }

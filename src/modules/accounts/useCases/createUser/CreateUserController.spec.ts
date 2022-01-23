@@ -21,8 +21,8 @@ describe("Create User Controller", () => {
 
   it("Should be able to create a new User", async () => {
     const response = await request(app).post("/users").send({
-      userEmail: "tarcizio@io.com.br",
-      userPassword: "k9sonwow11",
+      email: "tarcizio@io.com.br",
+      password: "k9sonwow11",
     });
 
     console.log(response.body);

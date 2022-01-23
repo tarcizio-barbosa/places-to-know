@@ -3,15 +3,17 @@ import "express-async-errors";
 import cors from "cors";
 import { config } from "dotenv";
 import express, { NextFunction, Request, Response } from "express";
-import "../typeorm";
-import "../../container";
 
 import { AppError } from "../../errors/AppError";
+import createConnectionDb from "../typeorm/index";
+import "../../container";
 import { router } from "./routes";
 
 config();
 
 const app = express();
+
+createConnectionDb();
 
 app.use(cors());
 app.use(express.json());

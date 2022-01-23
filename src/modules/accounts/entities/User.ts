@@ -2,15 +2,15 @@ import {
   Column,
   CreateDateColumn,
   Entity,
-  PrimaryColumn,
+  PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from "typeorm";
 import { v4 as uuid } from "uuid";
 
 @Entity("users")
 export class User {
-  @PrimaryColumn()
-  userId?: string;
+  @PrimaryGeneratedColumn("uuid")
+  id?: string;
 
   @Column()
   userEmail: string;
@@ -25,8 +25,8 @@ export class User {
   updatedAt: Date;
 
   constructor() {
-    if (!this.userId) {
-      this.userId = uuid();
+    if (!this.id) {
+      this.id = uuid();
     }
   }
 }

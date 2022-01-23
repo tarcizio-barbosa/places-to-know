@@ -20,6 +20,6 @@ export class InMemoryUsersRepository implements IUsersRepository {
   }
 
   async findById(userId: string): Promise<User> {
-    return this.users.find((user) => user.userId === userId);
+    return this.users.find((user) => user.id === userId);
   }
 }

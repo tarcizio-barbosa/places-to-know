@@ -19,9 +19,9 @@ describe("Create User Use Case", () => {
       userPassword: "k9sonwow11",
     });
 
-    expect(user).toHaveProperty("userId");
+    expect(user).toHaveProperty("id");
     expect(user.userPassword.length).toEqual(60);
-    expect(validate(user.userId as string)).toBeTruthy();
+    expect(validate(user.id as string)).toBeTruthy();
   });
 
   it("Should not be able to create a new User with the same e-mail", () => {
