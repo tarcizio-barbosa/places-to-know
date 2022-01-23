@@ -26,4 +26,14 @@ export class PlacesRepository implements IPlacesRepository {
 
     return newPlace;
   }
+
+  async getPlaces(): Promise<Place[]> {
+    return this.repository.find({
+      order: {
+        placeName: "ASC",
+      },
+      skip: 0,
+      take: 10,
+    });
+  }
 }

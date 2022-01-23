@@ -22,4 +22,8 @@ export class InMemoryPlacesRepository implements IPlacesRepository {
 
     return newPlace;
   }
+
+  async getPlaces(): Promise<Place[]> {
+    return this.places;
+  }
 }

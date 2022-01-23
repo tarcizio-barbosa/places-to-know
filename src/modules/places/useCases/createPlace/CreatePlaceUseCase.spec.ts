@@ -27,8 +27,6 @@ describe("Create Place", () => {
       userId: user.id,
     });
 
-    console.log(newPlace);
-
     expect(newPlace).toHaveProperty("id");
   });
 });
