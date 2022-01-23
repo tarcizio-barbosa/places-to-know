@@ -38,4 +38,32 @@ describe("Authenticate User", () => {
 
     expect(userAuthenticated.body).toHaveProperty("token");
   });
+
+  it("Should not be able to authenticate a User with incorrect e-mail", async () => {
+    await request(app).post("/users").send({
+      email: "tarcizio@io.com.br",
+      password: "k9sonwow11",
+    });
+
+    const response = await request(app).post("/sessions").send({
+      email: "tarcizio@io.com.",
+      password: "k9sonwow11",
+    });
+
+    expect(response.status).toBe(401);
+  });
+
+  it("Should not be able to authenticate a User with incorrect password", async () => {
+    await request(app).post("/users").send({
+      email: "tarcizio@io.com.br",
+      password: "k9sonwow11",
+    });
+
+    const response = await request(app).post("/sessions").send({
+      email: "tarcizio@io.com.br",
+      password: "k9sonwow12",
+    });
+
+    expect(response.status).toBe(401);
+  });
 });
