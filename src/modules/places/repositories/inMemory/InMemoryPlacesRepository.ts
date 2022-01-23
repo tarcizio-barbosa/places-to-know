@@ -26,4 +26,10 @@ export class InMemoryPlacesRepository implements IPlacesRepository {
   async getPlaces(): Promise<Place[]> {
     return this.places;
   }
+
+  async getPlaceById(placeId: string): Promise<Place> {
+    const place = this.places.find((place) => place.id === placeId);
+
+    return place;
+  }
 }

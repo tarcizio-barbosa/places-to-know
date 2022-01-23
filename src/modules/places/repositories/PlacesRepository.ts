@@ -36,4 +36,8 @@ export class PlacesRepository implements IPlacesRepository {
       take: 10,
     });
   }
+
+  async getPlaceById(placeId: string): Promise<Place> {
+    return this.repository.findOne({ id: placeId });
+  }
 }
