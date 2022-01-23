@@ -25,8 +25,6 @@ describe("Create User Controller", () => {
       password: "k9sonwow11",
     });
 
-    console.log(response.body);
-
     expect(response.status).toBe(201);
   });
 });
