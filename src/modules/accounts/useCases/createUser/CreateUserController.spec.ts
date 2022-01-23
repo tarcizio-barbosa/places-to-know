@@ -27,4 +27,18 @@ describe("Create User Controller", () => {
 
     expect(response.status).toBe(201);
   });
+
+  it("Should not be able to create a new User with the same e-mail", async () => {
+    await request(app).post("/users").send({
+      email: "tarcizio@io.com.br",
+      password: "k9sonwow11",
+    });
+
+    const response = await request(app).post("/users").send({
+      email: "tarcizio@io.com.br",
+      password: "k9sonwow11",
+    });
+
+    expect(response.status).toBe(400);
+  });
 });
