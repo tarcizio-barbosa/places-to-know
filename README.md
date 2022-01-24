@@ -2,6 +2,12 @@
 
 Places To Know é uma API de cadastro de lugares para se conhecer no Brasil. Baseado no nome da cidade ou minicipio, a API é capaz de utilizar os serviços da API do [Unsplash](https://unsplash.com/developers) e cadastrar também a foto do local.
 
+Esta aplicação é toda escrita em Typescript. Conta com um servidor HTTP feito em Express. Utiliza Postgres como banco de dados, com o auxilio do TypeORM para a sua manipulação. Além de usar uma estrutura de repositórios utilizando injeção de dependência.
+
+Possui cobertura de testes automatizados com Jest e Supertest.
+
+O padrão de escrita do código é garantido com o ESLint(Airbnb).
+
 ## Documentação
 
 - [Dependências](#dependências)
