@@ -40,4 +40,14 @@ export class PlacesRepository implements IPlacesRepository {
   async getPlaceById(placeId: string): Promise<Place> {
     return this.repository.findOne({ id: placeId });
   }
+
+  async updatePlace(id: string, placeName: string): Promise<void> {
+    await this.repository
+      .createQueryBuilder()
+      .update()
+      .set({ placeName })
+      .where("id = :id")
+      .setParameters({ id })
+      .execute();
+  }
 }
