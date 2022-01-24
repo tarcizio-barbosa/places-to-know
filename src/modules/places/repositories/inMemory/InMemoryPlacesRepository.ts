@@ -39,7 +39,11 @@ export class InMemoryPlacesRepository implements IPlacesRepository {
     const updatedPlace = this.places[placeIndex];
 
     updatedPlace.placeName = placeName;
+  }
 
-    // return updatedPlace;
+  async deletePlace(id: string): Promise<void> {
+    const placeIndex = this.places.findIndex((place) => place.id === id);
+
+    this.places.splice(placeIndex, 1);
   }
 }

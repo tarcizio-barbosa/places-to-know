@@ -6,4 +6,5 @@ export interface IPlacesRepository {
   getPlaces(): Promise<Place[]>;
   getPlaceById(placeId: string): Promise<Place>;
   updatePlace(id: string, placeName: string): Promise<void>;
+  deletePlace(id: string): Promise<void>;
 }

@@ -50,4 +50,8 @@ export class PlacesRepository implements IPlacesRepository {
       .setParameters({ id })
       .execute();
   }
+
+  async deletePlace(id: string): Promise<void> {
+    await this.repository.delete({ id });
+  }
 }
